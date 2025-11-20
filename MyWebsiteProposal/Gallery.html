@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All About Cakes!</title>
+  <link rel="icon" type="image/jpeg" href="images/cakeicon.jpg">
+
+  <link rel="stylesheet" href="MyWebsiteProposal/stylesheet/stylesheet.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      background-color: #f4f4f4;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1d3557;
+      color: #e9c46a;
+      z-index: 100;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-container {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .menu-items {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .menu-items li a {
+      color: #e9c46a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu-items li a:hover {
+      color: #2a9d8f;
+    }
+
+    /* Main content */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1d3557;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      position: relative;
+      background-color: #fff;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .img-box {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover .img-box img {
+      transform: scale(1.1);
+    }
+
+    /* Caption overlay */
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(29, 53, 87, 0.85);
+      color: #e9c46a;
+      font-weight: bold;
+      padding: 10px;
+      font-size: 0.95rem;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .gallery-item:hover .caption {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #1d3557;
+      color: #e9c46a;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gallery-item {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-item {
+        width: 100%;
+      }
+
+      .navbar-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-items {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">FunCakesAboutMe!</div>
+      <ul class="menu-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="fun.html">Fun</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <h1>Exceptional Cakes That Take the Cake!</h1>
+    <div class="gallery-grid">
+
+      <!-- Gallery items with captions -->
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake1-jpg.jpg" alt="Chocolate Cake"></div>
+        <div class="caption">"Decadent chocolate bliss 🍫"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake2.jpg" alt="Fruit Cake"></div>
+        <div class="caption">"Fresh & fruity delight 🍓"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake3.jpg" alt="Birthday Cake"></div>
+        <div class="caption">"Make every birthday unforgettable 🎉"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake4.jpg" alt="Wedding Cake"></div>
+        <div class="caption">"Elegance that wows 💍"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake5.jpeg" alt="Vanilla Cake"></div>
+        <div class="caption">"Simple & sweet perfection 🍰"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake6.jpeg" alt="Cupcakes"></div>
+        <div class="caption">"Mini treats, maximum joy 🧁"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake7.jpeg" alt="Special Cake"></div>
+        <div class="caption">"Custom designs, endless fun 🎨"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake8.jpg" alt="Layer Cake"></div>
+        <div class="caption">"Layers of love 💖"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake9.jpg" alt="Wedding Cake 2"></div>
+        <div class="caption">"Say 'I do' with style 💒"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake10.jpg" alt="Chocolate Drip Cake"></div>
+        <div class="caption">"Drip, drip, hooray! 🍫"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake11.jpg" alt="Birthday Surprise Cake"></div>
+        <div class="caption">"Surprise & delight every time 🎁"</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="img-box"><img src="images/cake12.jpg" alt="Fun Cake"></div>
+        <div class="caption">"Fun, whimsical, & oh so tasty 🎈"</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 FunCakesAboutMe! | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

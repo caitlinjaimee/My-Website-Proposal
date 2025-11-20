@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Your Cake</title>
+<link rel="icon" type="image/jpeg" href="images/cakeicon.jpg">
+
+
+<style>
+/* === GENERAL === */
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 70px; 
+  padding-bottom: 100px; 
+  margin: 0;
+  background: #f4f4f4;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* === BOX STYLING === */
+.box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.image-box {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.options-box {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+/* === HEADINGS === */
+.box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1d3557;
+}
+
+/* === OPTION BUTTONS === */
+.option-btn {
+  border: 2px solid #1d3557;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.option-btn:hover, .option-btn.selected {
+  background-color: #e9c46a;
+  color: #1d3557;
+  transform: scale(1.05);
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+h3 {
+  color: #1d3557;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* === FORM INPUTS === */
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* === SUBMIT BUTTON === */
+#submitCake {
+  background-color: #1d3557;
+  color: #e9c46a;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+#submitCake:hover {
+  background-color: #2a9d8f;
+  color: #fff;
+}
+
+/* === CONFIRMATION === */
+.confirmation {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* === NAVBAR & FOOTER === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1d3557;
+  color: #e9c46a;
+  z-index: 100;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo { font-size: 2rem; font-weight: bold; }
+.menu-items { display: flex; gap: 15px; list-style: none; margin:0; }
+.menu-items li a { color: #e9c46a; text-decoration: none; font-weight: 600; }
+.menu-items li a:hover { color: #2a9d8f; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1d3557;
+  color: #e9c46a;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.2);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-box, .options-box {
+    max-width: 90%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">FunCakesAboutMe!</div>
+    <ul class="menu-items">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main>
+  <!-- IMAGE BOX -->
+  <div class="box image-box">
+    <h2>Bring to life your very own cake</h2>
+    <img src="images/plaincake.jpg" alt="plain cake">
+  </div>
+
+  <!-- CAKE OPTIONS BOX -->
+  <div class="box options-box">
+    <h2>Design Your Dream Cake 🍰</h2>
+    
+    <div class="cake-options">
+      <h3>Size:</h3>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="Small">Small 🧁</button>
+        <button type="button" class="option-btn" data-value="Medium">Medium 🎂</button>
+        <button type="button" class="option-btn" data-value="Large">Large 🍰</button>
+      </div>
+
+      <h3>Shape:</h3>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="Round">Round 🔵</button>
+        <button type="button" class="option-btn" data-value="Square">Square ⬜</button>
+        <button type="button" class="option-btn" data-value="Heart">Heart ❤️</button>
+      </div>
+
+      <h3>Icing:</h3>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="Buttercream">Buttercream 🧈</button>
+        <button type="button" class="option-btn" data-value="Fondant">Fondant 🎨</button>
+        <button type="button" class="option-btn" data-value="Ganache">Ganache 🍫</button>
+      </div>
+
+      <h3>Decorations:</h3>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="Sprinkles">Sprinkles ✨</button>
+        <button type="button" class="option-btn" data-value="Fruit">Fruit 🍓</button>
+        <button type="button" class="option-btn" data-value="Chocolate Chips">Choco Chips 🍫</button>
+        <button type="button" class="option-btn" data-value="Custom">Custom 🎉</button>
+      </div>
+    </div>
+
+    <label for="message">Message on Cake (optional):</label>
+    <input type="text" id="message" placeholder="Happy Birthday!" maxlength="30">
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <button id="submitCake">Save Your Cake 🎉</button>
+    <div class="confirmation" id="confirmation"></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 FunCakesAboutMe! | All Rights Reserved</p>
+</footer>
+
+<!-- FRIENDLY JS -->
+<script>
+const options = document.querySelectorAll('.option-btn');
+const submitBtn = document.getElementById('submitCake');
+const confirmation = document.getElementById('confirmation');
+
+let cakeData = {};
+
+options.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.parentElement.previousElementSibling.textContent.replace(":", "");
+    cakeData[type] = btn.dataset.value;
+
+    btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  });
+});
+
+submitBtn.addEventListener('click', () => {
+  const message = document.getElementById('message').value;
+  const email = document.getElementById('email').value;
+
+  if (!cakeData.Size || !cakeData.Shape || !cakeData.Icing || !cakeData.Decorations || !email) {
+    confirmation.textContent = "Please select all cake options and enter your email!";
+    confirmation.style.color = "red";
+    return;
+  }
+
+  confirmation.style.color = "green";
+  confirmation.innerHTML = `
+    Thank you! Your cake has been designed!<br>
+    Size: ${cakeData.Size}, Shape: ${cakeData.Shape}, Icing: ${cakeData.Icing}, Decorations: ${cakeData.Decorations}<br>
+    Message: ${message}<br>
+    Confirmation sent to ${email} 🎉
+  `;
+
+  document.getElementById('message').value = '';
+  document.getElementById('email').value = '';
+  options.forEach(b => b.classList.remove('selected'));
+  cakeData = {};
+});
+</script>
+</body>
+</html>
+
